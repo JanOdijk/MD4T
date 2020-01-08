@@ -1,0 +1,379 @@
+<!-- schema xmlns="http://www.ascc.net/xml/schematron" > -->
+<schema xmlns="http://purl.oclc.org/dsdl/schematron"  >
+     <ns uri="http://www.clarin.eu/cmd/" prefix="cmd"/>
+     <pattern id="facetlack">
+	 <title>Facet element is lacking</title>
+
+          <rule context="cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:SoftwareFunction/cmd:LanguageVariety">
+               <assert test="cmd:region">Optional element region is lacking in CMD/Components/ClarinSoftwareDescription/SoftwareFunction/LanguageVariety</assert>
+          </rule>
+          
+
+          <rule context="cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:SoftwareFunction/cmd:LanguageVariety">
+               <assert test="cmd:Language">Optional element Language is lacking in CMD/Components/ClarinSoftwareDescription/SoftwareFunction/LanguageVariety</assert>
+          </rule>
+	 
+	 
+	 
+          <rule context="cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:SoftwareFunction/cmd:ToolTasks">
+               <assert test="cmd:toolTask">Search Facet element toolTask is lacking in CMD/Components/ClarinSoftwareDescription/SoftwareFunction/ToolTasks </assert>
+          </rule>
+
+<!--
+research domain	CMD/Components/ClarinSoftwareDescription/SoftwareFunction/ResearchDomains/researchDomain
+is obligatory so this rule is superfluous
+-->
+		  
+     	 <rule context="cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription">
+               <assert test="cmd:SoftwareFunction/cmd:ResearchDomains/cmd:researchDomain">Search Facet element researchDomain is lacking in CMD/Components/ClarinSoftwareDescription/SoftwareFunction</assert>
+          </rule>
+
+<!--
+linguistics Subject	CMD/Components/ClarinSoftwareDescription/SoftwareFunction/LinguisticsSubject/linguisticsSubject
+-->
+
+     	 <rule context="cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription">
+               <assert test="cmd:SoftwareFunction/cmd:LinguisticsSubject/cmd:linguisticsSubject">Search Facet element linguisticsSubject is lacking in CMD/Components/ClarinSoftwareDescription/SoftwareFunction</assert>
+          </rule>
+<!--
+Input
+-->
+		 <rule context="cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription">
+               <assert test="cmd:SoftwareImplementation/cmd:Input or cmd:Service/cmd:Operations/cmd:Operation/Input">Search Facet component Input is lacking in CMD/Components/ClarinSoftwareDescription/</assert>
+          </rule> 
+		 
+<!-- input language
+
+<rule context="cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:SoftwareImplementation/cmd:Input">
+   <assert test ="cmd:Language">search Facet component input language is lacking in cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:SoftwareImplementation/cmd:Input</assert>
+</rule>
+-->
+
+
+
+<!-- input language name
+
+<rule context="cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:SoftwareImplementation/cmd:Input/cmd:Language">
+   <assert test ="cmd:Language/cmd:LanguageName">search Facet element input language name is lacking in cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:SoftwareImplementation/cmd:Input/cmd:Language</assert>
+</rule>
+-->
+
+
+
+<!-- input ISOcode
+
+<rule context="cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:SoftwareImplementation/cmd:Input/cmd:Language/cmd:ISO639/cmd:iso-639-3-code">
+   <assert test ="cmd:Language/cmd:ISO639/cmd:iso-639-3-code">search Facet element input ISOcode is lacking in cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:SoftwareImplementation/cmd:Input/cmd:Language/cmd:ISO639/cmd:iso-639-3-code</assert>
+</rule>
+-->
+
+
+
+<!-- output mimetype
+-->
+<rule context="cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:SoftwareImplementation/cmd:Output">
+   <assert test ="cmd:MimeType/cmd:MimeType">search Facet element output mimetype is lacking in cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:SoftwareImplementation/cmd:Output</assert>
+</rule>
+
+
+
+
+<!-- output mimetype
+-->
+<rule context="cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:Service/cmd:Operations/cmd:Operation/cmd:Output">
+   <assert test ="cmd:ParameterGroup/cmd:MIMEType">search Facet element output mimetype is lacking in cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:Service/cmd:Operations/cmd:Operation/cmd:Output</assert>
+</rule>
+
+
+
+
+<!-- output mimetype
+-->
+<rule context="cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:Service/cmd:Operations/cmd:Operation/cmd:Output/cmd:ParameterGroup">
+   <assert test ="cmd:Parameters/cmd:Parameter/cmd:MIMEType">search Facet element output mimetype is lacking in cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:Service/cmd:Operations/cmd:Operation/cmd:Output/cmd:ParameterGroup</assert>
+</rule>
+
+
+
+
+<!-- output mimetype
+-->
+<rule context="cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:Service/cmd:Operations/cmd:Operation/cmd:Output/cmd:Parameter">
+   <assert test ="cmd:Parameter/cmd:MIMEType">search Facet element output mimetype is lacking in cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:Service/cmd:Operations/cmd:Operation/cmd:Output/cmd:Parameter</assert>
+</rule>
+
+
+
+
+<!-- output language
+
+<rule context="cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:SoftwareImplementation/cmd:Output">
+   <assert test ="cmd:Language">search Facet component output language is lacking in cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:SoftwareImplementation/cmd:Output</assert>
+</rule>
+-->
+
+
+
+<!-- output language name
+
+<rule context="cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:SoftwareImplementation/cmd:Output/cmd:Language">
+   <assert test ="cmd:LanguageName">search Facet element output language name is lacking in cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:SoftwareImplementation/cmd:Output/cmd:Language</assert>
+</rule>
+-->
+
+
+
+<!-- output ISOcode
+
+<rule context="cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:SoftwareImplementation/cmd:Output/cmd:Language">
+   <assert test ="cmd:ISO639/cmd:iso-639-3-code">search Facet element output ISOcode is lacking in cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:SoftwareImplementation/cmd:Output/cmd:Language</assert>
+</rule>
+-->
+
+
+
+
+<!-- OS
+-->
+<rule context="cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:SoftwareImplementation/cmd:InstallationRequirements/cmd:MinimumHardwareRequirements/cmd:SystemRequirements">
+   <assert test ="cmd:Platform/cmd:operatingSystem">display Facet element OS is lacking in cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:SoftwareImplementation/cmd:InstallationRequirements/cmd:MinimumHardwareRequirements/cmd:SystemRequirements</assert>
+</rule>
+
+
+
+
+<!-- OS
+-->
+<rule context="cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:SoftwareImplementation/cmd:InstallationRequirements/cmd:RecommendedHardwareSpecifications/cmd:SystemRequirements">
+   <assert test ="cmd:Platform/cmd:operatingSystem">display Facet element OS is lacking in cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:SoftwareImplementation/cmd:InstallationRequirements/cmd:RecommendedHardwareSpecifications/cmd:SystemRequirements</assert>
+</rule>
+
+
+
+
+<!-- National project
+-->
+<rule context="cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:GeneralInfo">
+   <assert test ="cmd:NationalProjects/cmd:Project">search Facet element National project is lacking in cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:GeneralInfo</assert>
+</rule>
+
+
+
+
+<!-- country
+-->
+<rule context="cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:GeneralInfo">
+   <assert test ="cmd:Country/cmd:CountryName">search Facet element country is lacking in cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:GeneralInfo</assert>
+</rule>
+
+
+
+
+<!-- project
+-->
+<rule context="cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:SoftwareDevelopment">
+   <assert test ="cmd:Project/cmd:name">search Facet element project is lacking in cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:SoftwareDevelopment</assert>
+</rule>
+
+
+
+
+<!-- nationalproject
+-->
+<rule context="cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:GeneralInfo">
+   <assert test ="cmd:NationalProjects/cmd:Project/cmd:name">search Facet element nationalproject is lacking in cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:GeneralInfo</assert>
+</rule>
+
+
+
+
+<!-- name
+-->
+<rule context="cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:GeneralInfo">
+   <assert test ="cmd:Name">display Facet element name is lacking in cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:GeneralInfo</assert>
+</rule>
+
+
+
+
+<!-- title
+-->
+<rule context="cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:GeneralInfo">
+   <assert test ="cmd:Title">display Facet element title is lacking in cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:GeneralInfo</assert>
+</rule>
+
+
+
+
+<!-- PID
+-->
+<rule context="cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:GeneralInfo">
+   <assert test ="cmd:PID">display Facet element PID is lacking in cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:GeneralInfo</assert>
+</rule>
+
+
+
+
+<!-- LifeCycleStatus
+-->
+<rule context="cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:GeneralInfo">
+   <assert test ="cmd:LifeCycleStatus">display Facet element LifeCycleStatus is lacking in cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:GeneralInfo</assert>
+</rule>
+
+
+
+
+<!-- ResearchPhase
+-->
+<rule context="cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:GeneralInfo">
+   <assert test ="cmd:ResearchPhase">search Facet element ResearchPhase is lacking in cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:GeneralInfo</assert>
+</rule>
+
+
+
+
+<!-- applicationType
+-->
+<rule context="cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:SoftwareImplementation">
+   <assert test ="cmd:UserInterface/cmd:applicationType">search Facet element applicationType is lacking in cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:SoftwareImplementation</assert>
+</rule>
+
+
+
+
+<!-- Description
+-->
+<rule context="cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:GeneralInfo">
+   <assert test ="cmd:Description/cmd:Description">display Facet element Description is lacking in cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:GeneralInfo</assert>
+</rule>
+
+
+
+
+<!-- ResourceProxy
+-->
+<rule context="cmd:CMD/cmd:Resources/cmd:ResourceProxyList">
+   <assert test ="cmd:ResourceProxy/cmd:ResourceRef">display Facet element ResourceProxy is lacking in cmd:CMD/cmd:Resources/cmd:ResourceProxyList</assert>
+</rule>
+
+
+
+
+<!-- ResourceProxy
+-->
+<rule context="cmd:CMD">
+   <assert test ="cmd:Resources/cmd:ResourceProxyList">display Facet component ResourceProxy is lacking in cmd:CMD</assert>
+</rule>
+
+
+
+
+<!-- Access
+-->
+<rule context="cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription">
+   <assert test ="cmd:Access">display Facet component Access is lacking in cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription</assert>
+</rule>
+
+
+
+
+<!-- Project
+-->
+<rule context="cmd:CMD/cmd:Components/cmd:ClarinSoftwareDevelopment">
+   <assert test ="cmd:Project">display Facet component Project is lacking in cmd:CMD/cmd:Components/cmd:ClarinSoftwareDevelopment</assert>
+</rule>
+
+
+
+
+<!-- Creator
+-->
+<rule context="cmd:CMD/cmd:Components/cmd:ClarinSoftwareDevelopment">
+   <assert test ="cmd:Creator">display Facet component Creator is lacking in cmd:CMD/cmd:Components/cmd:ClarinSoftwareDevelopment</assert>
+</rule>
+
+
+
+
+<!-- Access Contact
+-->
+<rule context="cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:Access">
+   <assert test ="cmd:Contact/cmd:Person or Contact/cmd:email or Contact/cmd:Organisation">display Facet element Access Contact is lacking in cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:Access</assert>
+</rule>
+
+
+
+
+<!-- Project Contact
+-->
+<rule context="cmd:CMD/cmd:Components/cmd:ClarinSoftwareDevelopment/cmd:Project">
+   <assert test ="cmd:Contact/cmd:Person or Contact/cmd:email or Contact/cmd:Organisation">display Facet element Project Contact is lacking in cmd:CMD/cmd:Components/cmd:ClarinSoftwareDevelopment/cmd:Project</assert>
+</rule>
+
+
+
+
+<!-- Creator Contact
+-->
+<rule context="cmd:CMD/cmd:Components/cmd:ClarinSoftwareDevelopment/cmd:Creator">
+   <assert test ="cmd:Contact/cmd:Person or Contact/cmd:email or Contact/cmd:Organisation">display Facet element Creator Contact is lacking in cmd:CMD/cmd:Components/cmd:ClarinSoftwareDevelopment/cmd:Creator</assert>
+</rule>
+
+
+
+
+<!-- Resource Documentation
+-->
+<rule context="cmd:CMD/cmd:Components/cmd:ClarinSoftwareDevelopment">
+   <assert test ="cmd:ResourceDocumentation">display Facet component Resource Documentation is lacking in cmd:CMD/cmd:Components/cmd:ClarinSoftwareDevelopment</assert>
+</rule>
+
+
+
+
+<!-- Documentation
+-->
+<rule context="cmd:CMD/cmd:Components/cmd:ClarinSoftwareDevelopment/cmd:ResourceDocumentation">
+   <assert test ="cmd:title or url">display Facet component Documentation is lacking in cmd:CMD/cmd:Components/cmd:ClarinSoftwareDevelopment/cmd:ResourceDocumentation</assert>
+</rule>
+
+
+
+
+<!-- OriginalSource
+-->
+<rule context="cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:GeneralInfo">
+   <assert test ="cmd:OriginalSource">display Facet element OriginalSource is lacking in cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:GeneralInfo</assert>
+</rule>
+
+
+
+
+<!-- CLARINCentre
+-->
+<rule context="cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:GeneralInfo">
+   <assert test ="cmd:CLARINCentre">display Facet element CLARINCentre is lacking in cmd:CMD/cmd:Components/cmd:ClarinSoftwareDescription/cmd:GeneralInfo</assert>
+</rule>
+
+
+
+
+<!-- picture
+-->
+<rule context="cmd:CMD/cmd:Components/cmd:ClarinSoftwareDevelopment/cmd:ResourceDocumentation">
+   <assert test ="cmd:pictures/cmd:picture">display Facet element picture is lacking in cmd:CMD/cmd:Components/cmd:ClarinSoftwareDevelopment/cmd:ResourceDocumentation</assert>
+</rule>
+
+
+
+
+<!--
+Modalities
+
+
+License
+organisation
+-->
+        
+     </pattern>
+</schema>
